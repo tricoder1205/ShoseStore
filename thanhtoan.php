@@ -11,6 +11,7 @@
         $query1 = mysqli_query($connect, $sql1);
         $row1 = mysqli_fetch_assoc($query1);
         $num = $row1['tt'];
+        
     if(isset($_POST['sbmt'])){
         $sodh = 'DH'. rand(0,999999);
         $msnv = 'NV02';
@@ -18,7 +19,8 @@
         $newdate = strtotime ( '+5 day' , strtotime ( $ngaydh ) ) ;
         $ngaygh = date ( 'Y/m/d' , $newdate );
         $trangthai = 'DXL';
-        $sql3 ="INSERT INTO dathang (SoDonDH,MSKH,MSNV,NgayDH,NgayGH,trangthai) value('$sodh','$mskh', '$msnv','$ngaydh','$ngaygh','$trangthai');";
+        $sql3 ="INSERT INTO dathang (SoDonDH,MSKH,MSNV,NgayDH,NgayGH,trangthai) 
+        value('$sodh','$mskh', '$msnv','$ngaydh','$ngaygh','$trangthai');";
         $query3 = mysqli_query($connect, $sql3);
         
         while($row_cart = mysqli_fetch_assoc($query_cart)){
@@ -118,9 +120,9 @@
             <!-- Thong tin Dat Hang -->
 <!-- Start pay info -->
                 <div class="pay_info">
-                        <div class="container">
+                    <div class="container">
 <!--Start form  -->
-                        <form action="" method ="POST" role="form" enctype="multipart/form-data">
+                    <form action="" method ="POST" role="form" enctype="multipart/form-data">
                         <div class="user">
                         <h1>Thông tin đặt hàng </h1>
                             <div class="form-group " id='pass'>
